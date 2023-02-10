@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PetsList from './PetsList'
 
 export default function Friend(props) {
@@ -12,7 +12,7 @@ export default function Friend(props) {
           <h3>Name: {props.friend.name}</h3>
           <p>Age: {props.friend.age}</p>
 
-          <p>Married: {props.friend.married ? 'yes':'no'} <button>change</button></p>
+          <p>Married: {props.friend.married ? 'yes':'no'} <button onClick={() => props.changeStatus(props.friend.id)}>change</button></p>
           <div>Likes:
             <ul>
               {/* 👉 3- Loop over the friend's hobbies and generate <li/> elements as you go */}
@@ -33,3 +33,15 @@ export default function Friend(props) {
     </div>
   )
 }
+
+
+// function Bank(props) {
+//   const[isLoggedIn, setIsLoggedIn] = useState(false);
+// return (
+//   <div>
+//     <Profile isLoggedIn={isLoggedIn}/> {/**<button>Log Out</button> */}
+//     <Account isLoggedIn={isLoggedIn}/> {/**<button>Log Out</button> */}
+//     <Deposit isLoggedIn={isLoggedIn}/> {/**<button>Log Out</button> */}
+//   </div>
+// )
+// }
